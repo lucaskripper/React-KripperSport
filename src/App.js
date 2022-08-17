@@ -1,14 +1,14 @@
 import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import Main from "./Components/Main/Main";
 const App = ()=>
 {
-    <>
-        <Header />
-        <main>
-            <h2>Bienvenidos a mi app</h2>
-        </main>
-        <footer>
-            <h5>Lucas Kripper</h5>
-        </footer>
-    </>
+    return (
+        <>
+            <Header/>
+            <Main/>
+            <Footer/>
+        </>
+    );
 };
 export default App;
