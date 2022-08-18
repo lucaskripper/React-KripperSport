@@ -3,7 +3,7 @@ const Header = () =>
 {
     return (
         <header>
-            <Nav menu={true}/>
+            <Nav/>
         </header>
     );
 }

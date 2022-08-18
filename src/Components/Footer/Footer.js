@@ -3,8 +3,10 @@ const Footer = ()=>
 {
     return (
         <footer>
-            <h5>Creado por Lucas Kripper</h5>
-            <Nav menu ={false}/>
+            <ul>
+                <li><a href="https://google.com">Facebook</a></li>
+                <li><a href="https://google.com">Instagram</a></li>
+            </ul>
         </footer>
     );
 }
