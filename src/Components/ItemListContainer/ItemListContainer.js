@@ -1,7 +1,7 @@
 const ItemListContainer = (prop)=>
 {
     return (
-        prop.greeting
+        <h2 style={prop.greeting}>Bienvendios a la tienda</h2>
     )    
 }
 export default ItemListContainer;
