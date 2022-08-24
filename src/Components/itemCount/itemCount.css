@@ -1,0 +1,48 @@
+.Contador
+{
+    display: flex;
+    width: 20%;
+    margin-left: 40%;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.Contador button 
+{
+    width: 40%;
+    border-radius: 5px;
+    border: none;
+    background-color: lightblue ;
+    color: black;
+    transition: all;
+}
+.Contador button:hover
+{
+    background-color: black;
+    color: lightblue;
+}
+.btnCarrito
+{
+    display: flex;
+    width: 20%;
+    margin-left: 40%;
+    border-radius: 5px;
+    border: none;
+    background-color: lightblue ;
+    color: black;
+    transition: all;
+}
+.btnCarrito:disabled
+{
+    color: rgba(138, 138, 138, 0.5);
+}
+.btnCarrito:hover
+{
+    background-color: black;
+    color: rgba(173, 216, 230);
+}
+.btnCarrito:hover:disabled
+{
+    background-color: black;
+    color: rgba(173, 216, 230, 0.5);
+}
