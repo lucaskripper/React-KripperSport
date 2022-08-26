@@ -1,0 +1,47 @@
+.contenedor {
+    display: inline-block;
+    flex-direction:row;
+    justify-content: center;
+    margin: auto;
+  }
+  .contenedor .tarjeta {
+    width: 330px;
+    height: 430px;
+    border-radius: 15px;
+    border-color: black;
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    box-shadow: 0 2px 2px rgba(247, 104, 2, 0.37);
+  }
+  .contenedor .tarjeta img {
+    width: 330 px;
+    height: 220 px;
+  }
+  .contenedor .tarjeta h5 {
+    font-weight: 600;
+  }
+  .contenedor .tarjeta h6 {
+    font-weight: 600;
+  }
+  .contenedor .tarjeta p {
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .contenedor .tarjeta button {
+    padding: 10px;
+    border-width: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all;
+  }
+  .contenedor .tarjeta button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 2px rgba(31, 38, 135, 0.37);
+  }
+  .contenedor .tarjeta:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 2px 2px rgba(247, 104, 2, 1);
+  }

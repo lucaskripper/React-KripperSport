@@ -4,7 +4,7 @@ const Main = ()=>
 {
     return (
         <main>
-                <ItemListContainer greeting={{color:"blue", textAlign:"center"}}/>
+                <ItemListContainer/>
         </main>
     )
 }
