@@ -1,0 +1,22 @@
+.divDitail
+{
+    display: grid;
+    grid-template-columns: repeat(2,50%) ;
+}
+.fildsetBorder
+{
+    border: solid;
+    border-radius: 20px;
+    border-color: #e6e6e6;
+    padding: 20px;
+    box-shadow: 0 8px 10px 0 rgba(31, 38, 135, 0.37);
+}
+.itemDitailRight
+{
+    display: grid;
+    grid-template-columns: 20% ;
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    align-items:flex-end;
+
+}

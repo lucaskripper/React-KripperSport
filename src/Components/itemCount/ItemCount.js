@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import './itemCount.css';
-const ItemCount = ()=>
+const ItemCount = ({talle})=>
 {
     const [numero, setNumero] = useState(0);
     const sumar=()=>

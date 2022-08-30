@@ -4,11 +4,11 @@ import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = ()=>
 {
-    const getProducts = new Promise((res,rej)=>
+    const getProducts = new Promise((res, rej)=>
     {
         setTimeout(()=>res(productos),2000);
     });
-    const [item, setItem] = new useState([]);
+    const [item, setItem] = useState([]);
     useEffect(()=>
     {
         getProducts
