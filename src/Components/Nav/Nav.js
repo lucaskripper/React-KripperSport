@@ -1,24 +1,25 @@
 import CardWidget from "./CardWidget";
+import { Link } from "react-router-dom";
 
 const Nav = ()=>
 {
     return (
         <nav>
             <section> {/** Esta seccion es para poner en un lugar el logo que hace de boton de inicio */}
-                <a href="https://google.com">KripperSport</a>
+                <Link to ="/">KripperSport</Link>
             </section>
             <ul>
                 <li>
-                    <a href="https://google.com">Boxeo</a>
+                    <Link to="/category/Boxeo">Boxeo</Link>
                 </li>
                 <li>
-                    <a href="https://google.com">MMA</a>
+                    <Link to="/category/MMA">MMA</Link>
                 </li>
                 <li>
-                    <a href="https://google.com">Gym | Funcional</a>
+                    <Link to="/category/Running">Running</Link>
                 </li>
                 <li>
-                    <a href="https://google.com">Suplementación</a>
+                    <Link to="/category/Crossfit">CrossFit</Link>
                 </li>
             </ul>
                 
@@ -27,10 +28,10 @@ const Nav = ()=>
                     <input type="text" placeholder="Buscar Productos" />
                 </li>
                 <li>
-                    <a href="https://google.com"><CardWidget Icon={<span className="material-symbols-outlined">shopping_cart</span>}/></a> 
+                    <Link to="/carrito"><CardWidget Icon={<span className="material-symbols-outlined">shopping_cart</span>}/></Link> 
                 </li>
                 <li>
-                    <a href="https://google.com"><CardWidget Icon={<span className="material-symbols-outlined">favorite</span>}/></a>
+                    <Link to="/favoritos"><CardWidget Icon={<span className="material-symbols-outlined">favorite</span>}/></Link>
                 </li>
             </ul>
         </nav>
