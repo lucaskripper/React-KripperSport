@@ -6,20 +6,20 @@ const Nav = ()=>
     return (
         <nav>
             <section> {/** Esta seccion es para poner en un lugar el logo que hace de boton de inicio */}
-                <Link to ="/">KripperSport</Link>
+                <Link to ="/"><img src="https://res.cloudinary.com/dvwqrbanv/image/upload/v1662583861/Logo-PhotoRoom_wfeeod.png" alt="KripperSport" /></Link>
             </section>
             <ul>
                 <li>
-                    <Link to="/category/Boxeo">Boxeo</Link>
+                    <Link to="/category/Boxeo" className="menu">Boxeo</Link>
                 </li>
                 <li>
-                    <Link to="/category/MMA">MMA</Link>
+                    <Link to="/category/MMA" className="menu">MMA</Link>
                 </li>
                 <li>
-                    <Link to="/category/Running">Running</Link>
+                    <Link to="/category/Running" className="menu">Running</Link>
                 </li>
                 <li>
-                    <Link to="/category/Crossfit">CrossFit</Link>
+                    <Link to="/category/Crossfit" className="menu">CrossFit</Link>
                 </li>
             </ul>
                 
@@ -28,10 +28,10 @@ const Nav = ()=>
                     <input type="text" placeholder="Buscar Productos" />
                 </li>
                 <li>
-                    <Link to="/carrito"><CardWidget Icon={<span className="material-symbols-outlined">shopping_cart</span>}/></Link> 
+                    <Link to="/carrito" className="menu"><CardWidget Icon={<span className="material-symbols-outlined">shopping_cart</span>}/></Link> 
                 </li>
                 <li>
-                    <Link to="/favoritos"><CardWidget Icon={<span className="material-symbols-outlined">favorite</span>}/></Link>
+                    <Link to="/favoritos" className="menu"><CardWidget Icon={<span className="material-symbols-outlined">favorite</span>}/></Link>
                 </li>
             </ul>
         </nav>

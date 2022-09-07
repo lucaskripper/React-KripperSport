@@ -4,20 +4,21 @@ import './itemDetail.css'
 const ItemDetail = ({producto})=>
 {
     return(
-        <div className="contenedorDetail">
-            <div className="tarjetaDetail">
+        <div className="Contenedor">
+            <div className="imagenPequeña">
                 <img src={producto.imagen} alt={producto.nombre} />
+                <img src={producto.imagen} alt={producto.nombre} />
+                <img src={producto.imagen} alt={producto.nombre} />
+                <img src={producto.imagen} alt={producto.nombre} />
+            </div>
+            <div className="imagenGrande">
+                <img src={producto.imagen} alt={producto.nombre} />
+            </div>
+            <div className="infoDetalle">
                 <h2>{producto.nombre}</h2>
-                <p>{producto.descripcion}</p>
-                <select name="talles" id="talles">
-                        <option value="value1">XL</option>
-                        <option value="value2" selected>L</option>
-                        <option value="value3">M</option>
-                        <option value="value4">S</option>
-                        <option value="value5">XS</option>
-                    </select>
+                <p className="descripcion">{producto.descripcion}</p>
                 <p>${producto.precio}.-</p>
-                <ItemCount talles={producto.talles}/>
+                <ItemCount></ItemCount>
             </div>
         </div>
     )

@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import './itemCount.css';
-const ItemCount = ({talle})=>
+const ItemCount = ()=>
 {
     const [numero, setNumero] = useState(0);
     const sumar=()=>
@@ -27,7 +27,7 @@ const ItemCount = ({talle})=>
     }
 
     return (
-        <div>
+        <div className="contenedorContador">
             <section className="Contador">
                 <button onClick={sumar}>+</button>
                 <p>{numero}</p>
