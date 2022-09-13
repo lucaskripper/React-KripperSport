@@ -1,11 +1,11 @@
-import FormCarrito from "../Formulario/FormCarrito";
+import { useContext } from "react";
+import { CarritoContexto } from "../../Context/CartContext";
 
 const Cart = ()=>
 {
-   return(
-    <div>
-        <FormCarrito/>
-    </div>
-   )
+    const {Cart}=useContext(CarritoContexto)
+    return(
+            <h1>Carrito</h1>
+    )
 }
 export default Cart;

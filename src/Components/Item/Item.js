@@ -10,7 +10,6 @@ const Item = ({producto})=>
                         <h2>{producto.nombre}</h2>
                         <p>${producto.precio}.-</p>
                     </Link>
-                    <button className='favorito'>♥ Añadir a favoritos</button>
                 </div>
             </div>
     )

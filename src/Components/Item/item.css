@@ -33,17 +33,6 @@
   transform: translateY(-15px);
   box-shadow: 0 2px 2px rgba(247, 104, 2, 1);
 }
-.favorito
-{
-  color: black;
-  background-color: white;
-  border: none;
-}
-.favorito:hover
-{
-  color: red;
-  cursor: pointer;
-}
 a
 {
   color: black;
