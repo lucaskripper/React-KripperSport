@@ -1,0 +1,39 @@
+.formulario
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.formulario input, .formulario legend, .formulario textarea
+{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.formulario textarea
+{
+    text-align: justify;
+}
+.formato
+{
+    border-radius: 5px;
+    text-align: center;
+}
+.btnEnviar
+{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: rgba(247, 104, 2, 1);
+    border-radius: 6px;
+    border: 2px solid rgba(247, 10, 2, 1);
+    margin-left: 1%;
+    
+}
+.btnEnviar:hover
+{
+    cursor: pointer;
+    color: rgba(247, 104, 2, 1) ;
+    background-color: #ffffff;
+}    

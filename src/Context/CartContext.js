@@ -1,11 +1,10 @@
-import { useState } from "react";
-import { createContext } from "react";
+import React ,{ createContext,useState} from 'react';
 
 const contexto = createContext();
 
-const CartProvider = ({hijos})=>{
+const CartProvider = ({children})=>{
     const {cart, setCart} = useState([]);
-    return <contexto.Provider value={{}}>{hijos}</contexto.Provider>
+    return <contexto.Provider value={{}}>{children}</contexto.Provider>
 }
 
 export default CartProvider;

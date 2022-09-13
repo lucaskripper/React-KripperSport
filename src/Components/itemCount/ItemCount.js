@@ -29,9 +29,9 @@ const ItemCount = ()=>
     return (
         <div className="contenedorContador">
             <section className="Contador">
-                <button onClick={sumar}>+</button>
+                <button onClick={sumar} className="btnCarrito">+</button>
                 <p>{numero}</p>
-                <button onClick={restar}>-</button>
+                <button onClick={restar} className="btnCarrito">-</button>
             </section>
             <button disabled={habilitar()} className="btnCarrito">Agregra al Carrito</button>
         </div>

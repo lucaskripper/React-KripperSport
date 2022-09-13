@@ -1,5 +1,6 @@
 import CardWidget from "./CardWidget";
 import { Link } from "react-router-dom";
+import './nav.css';
 
 const Nav = ()=>
 {
@@ -29,9 +30,6 @@ const Nav = ()=>
                 </li>
                 <li>
                     <Link to="/carrito" className="menu"><CardWidget Icon={<span className="material-symbols-outlined">shopping_cart</span>}/></Link> 
-                </li>
-                <li>
-                    <Link to="/favoritos" className="menu"><CardWidget Icon={<span className="material-symbols-outlined">favorite</span>}/></Link>
                 </li>
             </ul>
         </nav>

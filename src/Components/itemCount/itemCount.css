@@ -16,7 +16,7 @@
     width:100%;
     height: 80%;
 }
-button
+.btnCarrito
 {
     text-decoration: none;
     padding: 10px;
@@ -28,19 +28,19 @@ button
     border: 2px solid rgba(247, 10, 2, 1);
     
 }
-button:hover
+.btnCarrito:hover
 {
     cursor: pointer;
     color: rgba(247, 104, 2, 1) ;
     background-color: #ffffff;
 }
-button:hover:disabled
+.btnCarrito:hover:disabled
 {
     cursor: default;
     color: rgb(201, 200, 200);
     background-color: rgba(247, 104, 2, 1);
 }
-button:disabled
+.btnCarrito:disabled
 {
     color: rgb(201, 200, 200);
 }
