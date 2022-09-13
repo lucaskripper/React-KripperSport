@@ -1,18 +1,15 @@
 import React,{useState} from "react";
 import './itemCount.css';
-const ItemCount = ()=>
+const ItemCount = ({stock, onAdd})=>
 {
     const [numero, setNumero] = useState(0);
     const sumar=()=>
     {
-        setNumero(numero+1);
+        numero < stock && setNumero(numero+1);
     }
     const restar=()=>
     {
-        if(numero>0)
-        {
-            setNumero(numero-1);
-        }
+        numero > 0 && setNumero(numero-1);
     }
     const habilitar = ()=>
     {
@@ -33,7 +30,7 @@ const ItemCount = ()=>
                 <p>{numero}</p>
                 <button onClick={restar} className="btnCarrito">-</button>
             </section>
-            <button disabled={habilitar()} className="btnCarrito">Agregra al Carrito</button>
+            <button disabled={habilitar()} className="btnCarrito" onClick={()=>onAdd(numero)}>Agregra al Carrito</button>
         </div>
     )
 }
