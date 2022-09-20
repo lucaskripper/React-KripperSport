@@ -16,4 +16,22 @@
     cursor: pointer;
     color: rgba(247, 104, 2, 1) ;
     background-color: #ffffff;
-}    
+}
+.categoriaDetalleCarritoProducto
+{
+    display: grid;
+    grid-template-columns: 35% 20% 25% 20%;
+    justify-content: center;
+    margin: 3%;
+}
+.detalleCarritoProducto
+{
+    display: grid;
+    grid-template-columns: 35% 20% 25% 20%;
+    justify-content: center;
+    margin: 3%;
+}
+.btnDetalleCarritoProdcuto button
+{
+    width: 20%;
+} 

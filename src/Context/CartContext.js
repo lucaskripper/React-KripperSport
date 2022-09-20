@@ -26,8 +26,7 @@ const CartProvider = ({children})=>{
     }
     const removeItem=(item)=>
     {
-        const cartFiltrada = cart.filter((producto)=>producto.id!==item.id)
-        setCart(cartFiltrada);
+        setCart( cart.filter((producto)=>producto.id!==item.id));
     }
     const isInCart=(item)=>
     {
@@ -46,6 +45,28 @@ const CartProvider = ({children})=>{
         });
         setUnidades(acumulador);
     };
+    // const fewerProducts=(item)=>
+    // {
+    //     const newCart = cart.map((prod)=>
+    //     {
+    //         if(prod.id === item.id)
+    //         {
+    //             prod.cantidad= prod.cantidad - 1;
+    //         }
+    //     })
+    //     setCart(newCart);
+    // }
+    // const moreProducts=(item)=>
+    // {
+    //     const newCart = cart.map((prod)=>
+    //     {
+    //         if(prod.id === item.id)
+    //         {
+    //             prod.cantidad= prod.cantidad + 1;
+    //         }
+    //     })
+    //     setCart(newCart);
+    // }
     useEffect(()=>
     {
         totalQuantity();

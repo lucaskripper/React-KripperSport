@@ -6,28 +6,34 @@ import './cart.css'
 const Cart = ()=>
 {
     const {cart,totalPrice,clear,removeItem}=useContext(CarritoContexto)
-    
+    console.log(cart)
     return(
-        cart.lenght===0?
+        cart.length===0?
         <>
-        <h3>El carrito esta vacio</h3>
-        <Link to='/'><button>Seguir Comprando</button></Link>
+        <h1>El carrito esta vacio</h1>
+        <Link to='/'><button className="btnCarrito">Seguir Comprando</button></Link>
         </>
         : <>
-            <h3>Tu Carrito</h3> 
+            <h1>Tu Carrito</h1> 
+            <div className="categoriaDetalleCarritoProducto">
+                <h2>Producto</h2>
+                <h2>Cantidad</h2>
+                <h2>Precio unitario</h2>
+            </div>
             {cart.map((producto)=>
-            {
-                <div className="DetalleCarritoProducto" key={producto.id}>
-                    <h3>Producto: {producto.nombre}</h3>
-                    <h3>Cantidad: {producto.cantidad}</h3>
-                    <h3>Precio unitario: {producto.precio}</h3>
-                    <button>+</button>
-                    <button>-</button>
-                    <button onClick={()=>removeItem(producto.id)}><span class="material-symbols-outlined">delete</span></button>
+                <div className="detalleCarritoProducto" key={producto.id}>
+                    <h3>{producto.nombre}</h3>
+                    <h3>{producto.cantidad}</h3>
+                    <h3>${producto.precio}.-</h3>
+                    <div className="btnDetalleCarritoProdcuto">
+                        <button className="btnCarrito">+</button>
+                        <button className="btnCarrito">-</button>
+                        <button onClick={()=>removeItem(producto)} className="btnCarrito"><span className="material-symbols-outlined">delete</span></button>
+                    </div>
                 </div>
-            })}
+            )}
             <h3>${totalPrice()}.-</h3>
-            <button onClick={()=>clear()}>Limpiar Carrito</button>
+            <button onClick={()=>clear()} className="btnCarrito">Limpiar Carrito</button>
         </>
     )
 }
