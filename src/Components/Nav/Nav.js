@@ -1,9 +1,11 @@
 import CardWidget from "./CardWidget";
 import { Link } from "react-router-dom";
 import './nav.css';
-
+import { useContext } from "react";
+import { CarritoContexto } from "../../Context/CartContext";
 const Nav = ()=>
 {
+    const {unidades}=useContext(CarritoContexto)
     return (
         <nav>
             <section> {/** Esta seccion es para poner en un lugar el logo que hace de boton de inicio */}
@@ -30,6 +32,9 @@ const Nav = ()=>
                 </li>
                 <li>
                     <Link to="/carrito" className="menu"><CardWidget Icon={<span className="material-symbols-outlined">shopping_cart</span>}/></Link> 
+                </li>
+                <li>
+                    <p>{unidades}</p>
                 </li>
             </ul>
         </nav>
