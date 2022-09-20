@@ -1,6 +1,7 @@
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 import FormularioContacto from "../Formulario/FormularioContacto";
+import FormularioCompra from "../Formulario/FormularioCompra";
 import Cart from "../Cart/Cart";
 import {Routes, Route} from "react-router-dom";
 
@@ -27,8 +28,12 @@ const Main = ()=>
                     element={<ItemDetailContainer/>}
                 />
                 <Route
-                    path="carrito"
+                    path="/carrito"
                     element={<Cart/>}
+                />
+                <Route
+                    path="/comprar"
+                    element={<FormularioCompra/>}
                 />
             </Routes>
         </main>

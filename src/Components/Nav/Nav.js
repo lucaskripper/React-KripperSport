@@ -34,7 +34,7 @@ const Nav = ()=>
                     <Link to="/carrito" className="menu"><CardWidget Icon={<span className="material-symbols-outlined">shopping_cart</span>}/></Link> 
                 </li>
                 <li>
-                    <p>{unidades}</p>
+                    {unidades !== 0 && <p className="unidades">{unidades}</p>}
                 </li>
             </ul>
         </nav>

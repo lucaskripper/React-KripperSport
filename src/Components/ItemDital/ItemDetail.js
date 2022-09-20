@@ -30,6 +30,7 @@ const ItemDetail = ({producto})=>
                 <p>${producto.precio}.-</p>
                 {cantidad ===0 && <ItemCount stock={producto.stock} onAdd={onAdd}/>}
                 <Link to="/carrito"><button className="btnCarrito">Ir al carrito</button></Link>
+                {cantidad !== 0 && <Link to="/comprar"><button className="btnCarrito">Finalizar Compra</button></Link>}
             </div>
         </div>
     )

@@ -6,7 +6,6 @@ import './cart.css'
 const Cart = ()=>
 {
     const {cart,totalPrice,clear,removeItem}=useContext(CarritoContexto)
-    console.log(cart)
     return(
         cart.length===0?
         <>
@@ -34,6 +33,7 @@ const Cart = ()=>
             )}
             <h3>${totalPrice()}.-</h3>
             <button onClick={()=>clear()} className="btnCarrito">Limpiar Carrito</button>
+            <Link to="/comprar"><button className="btnCarrito">Finalizar Compra</button></Link>
         </>
     )
 }
