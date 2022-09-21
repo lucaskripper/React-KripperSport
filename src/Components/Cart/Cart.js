@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { CarritoContexto } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 import './cart.css'
+import CartDetail from "../CartDetail/CartDetail";
 
 const Cart = ()=>
 {
-    const {cart,totalPrice,clear,removeItem}=useContext(CarritoContexto)
+    const {cart,totalPrice,clear}=useContext(CarritoContexto)
     return(
         cart.length===0?
         <>
@@ -20,16 +21,7 @@ const Cart = ()=>
                 <h2>Precio unitario</h2>
             </div>
             {cart.map((producto)=>
-                <div className="detalleCarritoProducto" key={producto.id}>
-                    <h3>{producto.nombre}</h3>
-                    <h3>{producto.cantidad}</h3>
-                    <h3>${producto.precio}.-</h3>
-                    <div className="btnDetalleCarritoProdcuto">
-                        <button className="btnCarrito">+</button>
-                        <button className="btnCarrito">-</button>
-                        <button onClick={()=>removeItem(producto)} className="btnCarrito"><span className="material-symbols-outlined">delete</span></button>
-                    </div>
-                </div>
+                <CartDetail key={producto.id} producto={producto}/>
             )}
             <h3>${totalPrice()}.-</h3>
             <button onClick={()=>clear()} className="btnCarrito">Limpiar Carrito</button>

@@ -1,3 +1,14 @@
+.detalleCarritoProducto
+{
+    display: grid;
+    grid-template-columns: 10% 25% 20% 25% 20%;
+    align-items: center;
+    margin: 3%;
+}
+.btnDetalleCarritoProdcuto button
+{
+    width: 20%;
+}
 .btnCarrito
 {
     text-decoration: none;
@@ -17,11 +28,10 @@
     color: rgba(247, 104, 2, 1) ;
     background-color: #ffffff;
 }
-.categoriaDetalleCarritoProducto
+.imagenCartDetail
 {
-    display: grid;
-    grid-template-columns: 35% 20% 25% 20%;
-    justify-content: center;
-    margin: 3%;
+    height: 50%;
+    border: 2px solid;
+    display: flex;
+    border-color: rgba(247, 104, 2, 0.37);
 }
- 

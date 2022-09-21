@@ -6,8 +6,8 @@
   color: black;
 }
 .contenedor .tarjeta {
-  max-width: 330px;
-  max-height: 430px;
+  width: 330px;
+  height: auto;
   border-radius: 15px;
   border-color: black;
   overflow: hidden;

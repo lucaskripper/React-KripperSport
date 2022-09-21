@@ -1,5 +1,5 @@
 import CardWidget from "./CardWidget";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './nav.css';
 import { useContext } from "react";
 import { CarritoContexto } from "../../Context/CartContext";
@@ -13,16 +13,16 @@ const Nav = ()=>
             </section>
             <ul>
                 <li>
-                    <Link to="/category/Boxeo" className="menu">Boxeo</Link>
+                    <NavLink to="/category/Boxeo" className="menu">Boxeo</NavLink>
                 </li>
                 <li>
-                    <Link to="/category/MMA" className="menu">MMA</Link>
+                    <NavLink to="/category/MMA" className="menu">MMA</NavLink>
                 </li>
                 <li>
-                    <Link to="/category/Running" className="menu">Running</Link>
+                    <NavLink to="/category/Running" className="menu">Running</NavLink>
                 </li>
                 <li>
-                    <Link to="/category/Crossfit" className="menu">CrossFit</Link>
+                    <NavLink to="/category/Crossfit" className="menu">CrossFit</NavLink>
                 </li>
             </ul>
                 
@@ -31,7 +31,7 @@ const Nav = ()=>
                     <input type="text" placeholder="Buscar Productos" />
                 </li>
                 <li>
-                    <Link to="/carrito" className="menu"><CardWidget Icon={<span className="material-symbols-outlined">shopping_cart</span>}/></Link> 
+                    <NavLink to="/carrito" className="menu"><CardWidget Icon={<span className="material-symbols-outlined">shopping_cart</span>}/></NavLink> 
                 </li>
                 <li>
                     {unidades !== 0 && <p className="unidades">{unidades}</p>}

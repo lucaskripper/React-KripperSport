@@ -11,9 +11,7 @@ const CartProvider = ({children})=>{
     {
         if(isInCart(item))
         {
-            (item.cantidad + cantidad) <= item.stock 
-            ? item.cantidad += cantidad 
-            : item.cantidad = item.stock;
+            actualizarCantidad(item,cantidad)
         }
         else
         {
@@ -45,33 +43,73 @@ const CartProvider = ({children})=>{
         });
         setUnidades(acumulador);
     };
-    // const fewerProducts=(item)=>
-    // {
-    //     const newCart = cart.map((prod)=>
-    //     {
-    //         if(prod.id === item.id)
-    //         {
-    //             prod.cantidad= prod.cantidad - 1;
-    //         }
-    //     })
-    //     setCart(newCart);
-    // }
-    // const moreProducts=(item)=>
-    // {
-    //     const newCart = cart.map((prod)=>
-    //     {
-    //         if(prod.id === item.id)
-    //         {
-    //             prod.cantidad= prod.cantidad + 1;
-    //         }
-    //     })
-    //     setCart(newCart);
-    // }
+    const fewerProducts=(item,cantidad)=>
+    {
+       const carritoAcutalizado = cart.map((prod)=>
+       {
+            if(prod.id===item.id)
+            {
+                const productoActualizado =
+                {
+                    ...prod,cantidad
+                }
+                return productoActualizado;
+            }
+            else
+            {
+                return prod;
+            }
+       })
+       setCart(carritoAcutalizado)
+    }
+    const moreProducts=(item,cantidad)=>
+    {
+        const carritoAcutalizado = cart.map((prod)=>
+       {
+            if(prod.id===item.id)
+            {
+                const productoActualizado =
+                {
+                    ...prod,cantidad
+                }
+                return productoActualizado;
+            }
+            else
+            {
+                return prod;
+            }
+       })
+       setCart(carritoAcutalizado)
+    }
+    const actualizarCantidad=(item,cantidad)=>
+    {
+        const carritoAcutalizado = cart.map((prod)=>
+        {
+            if(prod.id===item.id)
+            {
+                const productoActualizado = {...prod}
+                if(productoActualizado.cantidad+cantidad<=productoActualizado.stock)
+                {
+                    productoActualizado.cantidad+=cantidad;
+                }
+                else
+                {
+                    productoActualizado.cantidad=productoActualizado.stock;
+                }
+                return productoActualizado;
+            }
+            else
+            {
+                return prod
+            }
+        });
+        setCart(carritoAcutalizado);
+    }
     useEffect(()=>
     {
         totalQuantity();
     },[cart]);
-    return <CarritoContexto.Provider value={{cart,addItem,clear,removeItem,totalPrice,unidades}}>{children}</CarritoContexto.Provider>
+    return <CarritoContexto.Provider value={{cart,addItem,clear,removeItem,totalPrice,unidades,fewerProducts,moreProducts}}>{children}</CarritoContexto.Provider>
 }
 
 export default CartProvider;

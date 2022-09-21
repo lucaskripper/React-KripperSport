@@ -6,15 +6,14 @@ import './itemDetail.css'
 const ItemDetail = ({producto})=>
 {
     const [cantidad, setCantidad] = useState(0);
-    const {cart,addItem}=useContext(CarritoContexto);
+    const {addItem}=useContext(CarritoContexto);
     const onAdd = (cantidadSeleccionada)=>
     {
         setCantidad(cantidadSeleccionada);
         addItem(producto,cantidadSeleccionada);
     }
-    console.log(cart);
     return(
-        <div className="Contenedor">
+        <div className="Contenedor" key={producto.id}>
             <div className="imagenPequeña">
                 <img src={producto.imagen} alt={producto.nombre} />
                 <img src={producto.imagen} alt={producto.nombre} />
