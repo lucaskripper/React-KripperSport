@@ -21,7 +21,7 @@ const CartDetail=({producto})=>
     return(
         <div className="detalleCarritoProducto">
             <img src={producto.imagen} alt={producto.nombre} className="imagenCartDetail"/>
-            {producto.cantidad===producto.stock?<h3 style={{color:"red"}}>{producto.nombre}</h3>:<h3>{producto.nombre}</h3>}
+            {producto.cantidad===producto.stock?<h3 style={{color:"red"}} id>{producto.nombre}</h3>:<h3>{producto.nombre}</h3>}
             <h3>{producto.cantidad}</h3>
             <h3>${producto.precio}.-</h3>
             <div className="btnDetalleCarritoProdcuto">

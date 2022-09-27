@@ -38,16 +38,6 @@ nav ul li .menu:hover
 {
     color:rgba(247, 104, 2, 1);
 }
-nav ul li input
-{
-    border: none;
-}
-nav ul li input:focus
-{
-    box-shadow: 0 0px 4px rgba(247, 104, 2, 1)inset, 0 0px 4px rgba(247, 104, 2, 1);
-    outline: 0 none;
-    border-radius: 5px;
-}
 .unidades
 {
     color: rgba(247, 104, 2, 1);

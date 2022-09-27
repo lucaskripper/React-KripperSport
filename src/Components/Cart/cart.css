@@ -24,4 +24,22 @@
     justify-content: center;
     margin: 3%;
 }
+@media (max-width: 1240px) 
+{
+    .categoriaDetalleCarritoProducto
+    {
+        grid-template-columns: 30% 20% 25% 25%;
+    }
+    .categoriaDetalleCarritoProducto .imagenCartDetail
+    {
+        display: none;
+    }    
+}
+@media (max-width: 1000px) 
+{
+    .categoriaDetalleCarritoProducto
+    {
+        font-size: small;
+    }
+}
  

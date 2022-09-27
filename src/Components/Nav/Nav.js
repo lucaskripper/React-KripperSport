@@ -24,12 +24,6 @@ const Nav = ()=>
                 <li>
                     <NavLink to="/category/Crossfit" className="menu">CrossFit</NavLink>
                 </li>
-            </ul>
-                
-            <ul> {/** La idea de esta segunda lista es la de organzar de mejor forma la Nav */}
-                <li>
-                    <input type="text" placeholder="Buscar Productos" />
-                </li>
                 <li>
                     <NavLink to="/carrito" className="menu"><CardWidget Icon={<span className="material-symbols-outlined">shopping_cart</span>}/></NavLink> 
                 </li>

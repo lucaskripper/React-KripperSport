@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from "react"
-import products from '../../Mock/products.data.json'
+// import products from '../../Mock/products.data.json'
 import ItemDetail from '../ItemDital/ItemDetail'
 import { useParams } from "react-router-dom"
 import {bd} from '../../fireBaseConfiguraciones'
