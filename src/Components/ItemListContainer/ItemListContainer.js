@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
-// import productos from '../../Mock/products.data.json'
 import ItemList from "../ItemList/ItemList";
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { bd } from '../../fireBaseConfiguraciones';
@@ -29,20 +28,6 @@ const ItemListContainer = ()=>
                 console.log(error);
             })
     }, [categoryId]);
-
-    // useEffect(()=>
-    // {
-    //     const getProducts = new Promise((res)=>
-    //     {
-    //         const productsFilter = productos.filter((producto)=>producto.categoria === categoryId)
-    //         const products = categoryId ? productsFilter : productos
-    //         setTimeout(()=>res(products),2000);
-    //     });
-    //     getProducts
-    //     .then(producto=>setItem(producto))
-    //     .catch(()=>console.log("Error"))
-        
-    // },[categoryId])
     return <ItemList listaProductos={item}/>
     
 }

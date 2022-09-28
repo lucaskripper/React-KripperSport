@@ -1,22 +1,16 @@
-import { useState } from "react";
 import { useContext } from "react";
 import { CarritoContexto } from "../../Context/CartContext";
 import './cartDetail.css';
 const CartDetail=({producto})=>
 {
-    const {removeItem,fewerProducts}=useContext(CarritoContexto)
-    const [cantidad, setCantidad]=useState(producto.cantidad)
+    const {removeItem,fewerProducts,moreProducts}=useContext(CarritoContexto)
     const restar=()=>
     {
-        cantidad > 0 && setCantidad(cantidad-1);
-        console.log(cantidad)
-        fewerProducts(producto,cantidad)
+        producto.cantidad > 0 && fewerProducts(producto,producto.cantidad-1)
     }
     const sumar=()=>
     {
-        cantidad < producto.stock && setCantidad(cantidad+1);
-        console.log(cantidad)
-        fewerProducts(producto,cantidad)
+        producto.cantidad < producto.stock && moreProducts(producto,producto.cantidad+1)
     }
     return(
         <div className="detalleCarritoProducto">

@@ -4,7 +4,7 @@
     justify-content: center;
     flex-direction: column;
 }
-.formulario input, .formulario legend, .formulario textarea
+.formulario input, .formulario h3, .formulario textarea
 {
     margin-top: 1%;
     margin-bottom: 1%;
@@ -36,4 +36,8 @@
     cursor: pointer;
     color: rgba(247, 104, 2, 1) ;
     background-color: #ffffff;
-}    
+}
+.fromularioCompra h2, .fromularioCompra label, .fromularioCompra input
+{
+    margin-bottom: 1%;
+}

@@ -1,64 +1,57 @@
-import {addDoc,collection,doc,serverTimestamp,updateDoc} from 'firebase/firestore';
-import React, { useState } from 'react';
-import { bd } from '../../fireBaseConfiguraciones';
-
-const FormularioCompra = ({ cart, total, clearCart, handleId }) => {
+import './formularioContacto.css'
+import { useState } from 'react'
+import { useContext } from 'react';
+import { CarritoContexto } from "../../Context/CartContext";
+import {addDoc, collection, serverTimestamp} from 'firebase/firestore'
+import {bd} from '../../fireBaseConfiguraciones'
+const FormularioCompra=()=>
+{
+    const {cart,totalPrice,clear}=useContext(CarritoContexto);
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const order = {
-            buyer: { nombre: nombre, apellido: apellido },
-            items: cart,
-            total: total,
-            date: serverTimestamp(),
+    const [mail, setMail] = useState('');
+    const [telefono, setTelefono]=useState('');
+    const handelSumbit= (event) => 
+    {
+        event.preventDefault()
+        const orden =
+        {
+            buyer:{nombre: nombre, apellido: apellido, telefono:telefono, mail: mail},
+            items:cart,
+            total:totalPrice(),
+            fecha:serverTimestamp()
         };
-
-        const ordersCollection = collection(bd, 'orders');
-
-        addDoc(ordersCollection, order).then((res) => {
-            handleId(res.id);
-            clearCart();
-            updateprod();
+        const collecionOrdenes = collection(bd, 'ordenes')
+        addDoc(collecionOrdenes, orden)
+        .then((res)=>{
+            console.log(res)
+            clear();
         });
     };
-
-    const updateprod = () => {
-        const orderDoc = doc(bd, 'orders', 'A29yVRkpjasoaRfEo3G5');
-        updateDoc(orderDoc, { total: 100 });
-    };
-
-    const handleChangeNombre = (event) => {
-        //console.log(event.target.value);
-        setNombre(event.target.value);
-    };
-
-    const handleChangeApellido = (event) => {
-        setApellido(event.target.value);
-    };
-
-    return (
-        <div style={{ marginTop: '20px' }}>
-            <form action="" onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Nombre..."
-                    name="nombre"
-                    value={nombre}
-                    onChange={handleChangeNombre}
-                />
-                <input
-                    type="text"
-                    placeholder="Apellido..."
-                    name="apellido"
-                    value={apellido}
-                    onChange={handleChangeApellido}
-                />
-                <button>Enviar</button>
+    const handelChangeNombre = (event) => setNombre(event.target.value);
+    const handelChangeApellido = (event) =>setApellido(event.target.value);
+    const handelChangeMail = (event) => setMail(event.target.value);
+    const handelChangeTelefono = (event) => setTelefono(event.target.value);
+    return(
+        <form action="" onSubmit={handelSumbit} className="fromularioCompra">
+            <h2>Finaliza tu compra</h2>
+            <label htmlFor="nombreYApellido">Nombre y Apellido</label>
+            <br />
+            <input type="text" name="nombreYApellido" placeholder="Fulano" value={nombre} onChange={handelChangeNombre} className="formato" />
+            <input type="text" name="nombreYApellido" placeholder="Lopez" value={apellido} onChange={handelChangeApellido} className="formato"/>
+            <br />
+            <label htmlFor="mail">Mail</label>
+            <br/>
+            <input type="email" name="mail" placeholder="Fulano@contacto.com" value={mail} onChange={handelChangeMail} className="formato"/>
+            <br/>
+            <label htmlFor='telefono'>Telefono</label>
+            <br />
+            <input type="tel" name='telefono' className='formato' pattern='[0-9]{10}' value={telefono} onChange={handelChangeTelefono}/>
+            <br />
+            <small> Ingrese con el codigo de area y sin el 15</small>
+            <br />
+            <button type='sumbit' className='btnEnviar'>Comprar</button>
             </form>
-        </div>
-    );
-};
-
+    )
+}
 export default FormularioCompra;
