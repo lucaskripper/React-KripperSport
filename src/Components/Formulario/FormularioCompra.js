@@ -6,7 +6,8 @@ import {addDoc, collection, serverTimestamp} from 'firebase/firestore'
 import {bd} from '../../fireBaseConfiguraciones'
 const FormularioCompra=()=>
 {
-    const {cart,totalPrice,clear}=useContext(CarritoContexto);
+    const {cart,totalPrice,clear,unidades}=useContext(CarritoContexto);
+    const [idCompra, setIdCompra]=useState('');
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [mail, setMail] = useState('');
@@ -24,34 +25,52 @@ const FormularioCompra=()=>
         const collecionOrdenes = collection(bd, 'ordenes')
         addDoc(collecionOrdenes, orden)
         .then((res)=>{
-            console.log(res)
+            handelId(res.id)
             clear();
         });
     };
+    const handelId=(id)=>
+    {
+        setIdCompra(id);
+    }
     const handelChangeNombre = (event) => setNombre(event.target.value);
     const handelChangeApellido = (event) =>setApellido(event.target.value);
     const handelChangeMail = (event) => setMail(event.target.value);
     const handelChangeTelefono = (event) => setTelefono(event.target.value);
+    if(idCompra)
+    {
+        <>
+        <h1>Gracias por tu compra</h1>
+        <h3>Tu codigo de compra es:{idCompra}</h3>
+        </>
+    }
     return(
-        <form action="" onSubmit={handelSumbit} className="fromularioCompra">
+        <>
             <h2>Finaliza tu compra</h2>
-            <label htmlFor="nombreYApellido">Nombre y Apellido</label>
-            <br />
-            <input type="text" name="nombreYApellido" placeholder="Fulano" value={nombre} onChange={handelChangeNombre} className="formato" />
-            <input type="text" name="nombreYApellido" placeholder="Lopez" value={apellido} onChange={handelChangeApellido} className="formato"/>
-            <br />
-            <label htmlFor="mail">Mail</label>
-            <br/>
-            <input type="email" name="mail" placeholder="Fulano@contacto.com" value={mail} onChange={handelChangeMail} className="formato"/>
-            <br/>
-            <label htmlFor='telefono'>Telefono</label>
-            <br />
-            <input type="tel" name='telefono' className='formato' pattern='[0-9]{10}' value={telefono} onChange={handelChangeTelefono}/>
-            <br />
-            <small> Ingrese con el codigo de area y sin el 15</small>
-            <br />
-            <button type='sumbit' className='btnEnviar'>Comprar</button>
+            <div className='detalleCompra'>        
+                <h3>Detalle</h3>
+                <p>Cantidad de productos: {unidades}</p>
+                <p>Total a pagar: ${totalPrice()}-.</p>
+            </div>
+            <form action="" onSubmit={handelSumbit} className="fromularioCompra">
+                <label htmlFor="nombreYApellido">Nombre y Apellido</label>
+                <br />
+                <input type="text" name="nombreYApellido" placeholder="Fulano" value={nombre} onChange={handelChangeNombre} className="formato" />
+                <input type="text" name="nombreYApellido" placeholder="Lopez" value={apellido} onChange={handelChangeApellido} className="formato"/>
+                <br />
+                <label htmlFor="mail">Mail</label>
+                <br/>
+                <input type="email" name="mail" placeholder="Fulano@contacto.com" value={mail} onChange={handelChangeMail} className="formato"/>
+                <br/>
+                <label htmlFor='telefono'>Telefono</label>
+                <br />
+                <input type="tel" name='telefono' className='formato' pattern='[0-9]{10}' value={telefono} onChange={handelChangeTelefono}/>
+                <br />
+                <small> Ingrese con el codigo de area y sin el 15</small>
+                <br />
+                <button type='sumbit' className='btnEnviar'>Comprar</button>
             </form>
+        </>
     )
 }
 export default FormularioCompra;

@@ -21,8 +21,12 @@ const FormularioContacto = ()=>
         }
         const collecionConsultas = collection(bd, 'consultas')
         addDoc(collecionConsultas, consulta)
-        .then((res)=>setIdContacto(res.id));
+        .then((res)=>handelId(res.id));
     };
+    const handelId=(id)=>
+    {
+        setIdContacto(id);
+    }
     const handelChangeNombre = (event) => setNombre(event.target.value);
     const handelChangeApellido = (event) =>setApellido(event.target.value);
     const handelChangeMail = (event) => setMail(event.target.value);
@@ -34,7 +38,6 @@ const FormularioContacto = ()=>
         <h1>Tu consulta fue enviada!</h1>
         <h3>Tu codigo de consulta es:{idContacto}</h3>
         <h3>Un representante se comunicara a la brevedad</h3>
-        {setIdContacto('')}
         </>
     }
     return (
