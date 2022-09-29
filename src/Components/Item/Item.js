@@ -5,7 +5,7 @@ const Item = ({producto})=>
     return (
             <div className="contenedor" id={producto.id}>
                 <div className="tarjeta">
-                    <Link to={`/item/${producto.id}`}>
+                    <Link to={`/item/${producto.id}`} className="link">
                         <img src={producto.imagen} alt={producto.nombre} />
                         <h2>{producto.nombre}</h2>
                         <p>${producto.precio}.-</p>

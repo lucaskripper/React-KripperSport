@@ -23,11 +23,14 @@
 .contenedor .tarjeta h2 {
   font-weight: 600;
   padding: 2%;
+  color: black;
+  text-decoration: none;
 }
 .contenedor .tarjeta p {
   padding: 2%;
   font-size: 16px;
   font-weight: 300;
+  color: black;
 }
 .contenedor .tarjeta:hover {
   transform: translateY(-15px);
@@ -38,4 +41,8 @@ a
   color: black;
   text-decoration: none;
   font-size: 14px;
+}
+.link
+{
+  text-decoration: none;
 }

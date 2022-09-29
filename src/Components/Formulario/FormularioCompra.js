@@ -5,8 +5,10 @@ import { CarritoContexto } from "../../Context/CartContext";
 import {addDoc, collection, serverTimestamp} from 'firebase/firestore'
 import {bd} from '../../fireBaseConfiguraciones'
 import { Link } from "react-router-dom";
+import Carga from "../Carga/Carga";
 const FormularioCompra=()=>
 {
+    const [cargando, setCargando] = useState(false)
     const {cart,totalPrice,clear,unidades}=useContext(CarritoContexto);
     const [idCompra, setIdCompra]=useState('');
     const [nombre, setNombre] = useState('');
@@ -16,6 +18,7 @@ const FormularioCompra=()=>
     const handelSumbit= (event) => 
     {
         event.preventDefault()
+        setCargando(true);
         const orden =
         {
             buyer:{nombre: nombre, apellido: apellido, telefono:telefono, mail: mail},
@@ -28,7 +31,10 @@ const FormularioCompra=()=>
         .then((res)=>{
             handelId(res.id)
             clear();
-        });
+        })
+        .finally(()=>{
+            setCargando(false);
+        })
     };
     const handelId=(id)=>
     {
@@ -38,6 +44,10 @@ const FormularioCompra=()=>
     const handelChangeApellido = (event) =>setApellido(event.target.value);
     const handelChangeMail = (event) => setMail(event.target.value);
     const handelChangeTelefono = (event) => setTelefono(event.target.value);
+    if(cargando)
+    {
+        return <Carga/>
+    }
     if(idCompra)
     {
         return(
