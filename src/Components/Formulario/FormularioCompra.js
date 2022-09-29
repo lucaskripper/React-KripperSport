@@ -14,6 +14,7 @@ const FormularioCompra=()=>
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [mail, setMail] = useState('');
+    const [mailRepetido, setMailRepetido]=useState("");
     const [telefono, setTelefono]=useState('');
     const handelSumbit= (event) => 
     {
@@ -43,6 +44,7 @@ const FormularioCompra=()=>
     const handelChangeNombre = (event) => setNombre(event.target.value);
     const handelChangeApellido = (event) =>setApellido(event.target.value);
     const handelChangeMail = (event) => setMail(event.target.value);
+    const handelChangeMailRepetido = (event) => setMailRepetido(event.target.value);
     const handelChangeTelefono = (event) => setTelefono(event.target.value);
     if(cargando)
     {
@@ -76,13 +78,18 @@ const FormularioCompra=()=>
                 <br/>
                 <input type="email" name="mail" placeholder="Fulano@contacto.com" value={mail} onChange={handelChangeMail} className="formato"/>
                 <br/>
+                <label htmlFor="mailRepetido">Repeti tu Mail</label>
+                <br/>
+                <input type="email" name="mailRepetido" placeholder="Fulano@contacto.com" value={mailRepetido} onChange={handelChangeMailRepetido} className="formato"/>
+                <br/>
+                {mail!== mailRepetido && <p className='alerta'>Los mail no son iguales</p>}
                 <label htmlFor='telefono'>Telefono</label>
                 <br />
                 <input type="tel" name='telefono' className='formato' pattern='[0-9]{10}' value={telefono} onChange={handelChangeTelefono}/>
                 <br />
                 <small> Ingrese con el codigo de area y sin el 15</small>
                 <br />
-                <button type='sumbit' className='btnEnviar'>Comprar</button>
+                {nombre !== "" && apellido !== "" && mail !== "" && telefono !== "" && mail === mailRepetido ? <button type='sumbit' className='btnEnviar'>Comprar</button>: <p className='alerta'>Debe llenar todos los campos</p>}
             </form>
         </>
     )

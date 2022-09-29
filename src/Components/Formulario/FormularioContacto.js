@@ -11,6 +11,7 @@ const FormularioContacto = ()=>
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [mail, setMail] = useState('');
+    const [mailRepetido, setMailRepetido]=useState("");
     const [telefono, setTelefono] = useState('');
     const [comentario, setComentario] = useState('');
     const handelSumbit= (event) => 
@@ -35,6 +36,7 @@ const FormularioContacto = ()=>
     const handelChangeNombre = (event) => setNombre(event.target.value);
     const handelChangeApellido = (event) =>setApellido(event.target.value);
     const handelChangeMail = (event) => setMail(event.target.value);
+    const handelChangeMailRepetido = (event) => setMailRepetido(event.target.value);
     const handelChangeTelefono = (event) => setTelefono(event.target.value);
     const handelChangeComentario = (event)=> setComentario(event.target.value);
     if(cargando)
@@ -66,6 +68,11 @@ const FormularioContacto = ()=>
                 <br/>
                 <input type="email" name="mail" placeholder="Fulano@contacto.com" value={mail} onChange={handelChangeMail} className="formato"/>
                 <br/>
+                <label htmlFor="mailRepetido">Repeti tu Mail</label>
+                <br/>
+                <input type="email" name="mailRepetido" placeholder="Fulano@contacto.com" value={mailRepetido} onChange={handelChangeMailRepetido} className="formato"/>
+                <br/>
+                {mail!== mailRepetido && <p className='alerta'>Los mail no son iguales</p>}
                 <label htmlFor="Telefono">Telefono</label>
                 <br />
                 <input type="tel" name="telefono" placeholder="+5493876123158" value={telefono} onChange={handelChangeTelefono} className="formato" pattern='[0-9]{10}'/>
@@ -76,7 +83,7 @@ const FormularioContacto = ()=>
                 <br/>
                 <textarea name="comentario" cols="44" rows="10" value={comentario} onChange={handelChangeComentario} className="formato"></textarea>
                 <br />
-                <button type='sumbit' className='btnEnviar'>Enviar</button>
+                {nombre !== "" && apellido !== "" && mail !== "" && telefono !== "" && comentario !== ""? <button type='sumbit' className='btnEnviar'>Enviar</button>: <p className='alerta'>Debe llenar todos los campos</p>}
             </form>
         </div>
     )
