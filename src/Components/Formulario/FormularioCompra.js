@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { CarritoContexto } from "../../Context/CartContext";
 import {addDoc, collection, serverTimestamp} from 'firebase/firestore'
 import {bd} from '../../fireBaseConfiguraciones'
+import { Link } from "react-router-dom";
 const FormularioCompra=()=>
 {
     const {cart,totalPrice,clear,unidades}=useContext(CarritoContexto);
@@ -39,10 +40,13 @@ const FormularioCompra=()=>
     const handelChangeTelefono = (event) => setTelefono(event.target.value);
     if(idCompra)
     {
+        return(
         <>
         <h1>Gracias por tu compra</h1>
-        <h3>Tu codigo de compra es:{idCompra}</h3>
+        <h3>Tu codigo de compra es: {idCompra}</h3>
+        <Link to='/'><button className="btnCarrito">Seguir Comprando</button></Link>
         </>
+        )
     }
     return(
         <>

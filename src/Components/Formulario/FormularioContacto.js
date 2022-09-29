@@ -2,6 +2,7 @@ import './formularioContacto.css'
 import { useState } from 'react'
 import {addDoc, collection, serverTimestamp} from 'firebase/firestore'
 import {bd} from '../../fireBaseConfiguraciones'
+import { Link } from "react-router-dom";
 const FormularioContacto = ()=>
 {
     const [idContacto, setIdContacto] = useState('');
@@ -34,11 +35,14 @@ const FormularioContacto = ()=>
     const handelChangeComentario = (event)=> setComentario(event.target.value);
     if(idContacto)
     {
+        return(
         <>
         <h1>Tu consulta fue enviada!</h1>
-        <h3>Tu codigo de consulta es:{idContacto}</h3>
+        <h3>Tu codigo de consulta es: {idContacto}</h3>
         <h3>Un representante se comunicara a la brevedad</h3>
+        <Link to='/'><button className="btnCarrito">Volver al inicio</button></Link>
         </>
+        )
     }
     return (
         <div className="formulario">
