@@ -4,6 +4,7 @@ import {addDoc, collection, serverTimestamp} from 'firebase/firestore'
 import {bd} from '../../fireBaseConfiguraciones'
 import { Link } from "react-router-dom";
 import Carga from '../Carga/Carga';
+import { Alert } from 'reactstrap';
 const FormularioContacto = ()=>
 {
     const [cargando, setCargando] = useState(false)
@@ -72,7 +73,7 @@ const FormularioContacto = ()=>
                 <br/>
                 <input type="email" name="mailRepetido" placeholder="Fulano@contacto.com" value={mailRepetido} onChange={handelChangeMailRepetido} className="formato"/>
                 <br/>
-                {mail!== mailRepetido && <p className='alerta'>Los mail no son iguales</p>}
+                {mail!== mailRepetido && <Alert color="danger" className='alerta'>Los mail no son iguales</Alert>}
                 <label htmlFor="Telefono">Telefono</label>
                 <br />
                 <input type="tel" name="telefono" placeholder="+5493876123158" value={telefono} onChange={handelChangeTelefono} className="formato" pattern='[0-9]{10}'/>
@@ -83,7 +84,7 @@ const FormularioContacto = ()=>
                 <br/>
                 <textarea name="comentario" cols="44" rows="10" value={comentario} onChange={handelChangeComentario} className="formato"></textarea>
                 <br />
-                {nombre !== "" && apellido !== "" && mail !== "" && telefono !== "" && comentario !== ""? <button type='sumbit' className='btnEnviar'>Enviar</button>: <p className='alerta'>Debe llenar todos los campos</p>}
+                {nombre !== "" && apellido !== "" && mail !== "" && telefono !== "" && comentario !== ""? <button type='sumbit' className='btnEnviar'>Enviar</button>: <Alert color="danger" className='alerta'>Debe llenar todos los campos</Alert>}
             </form>
         </div>
     )

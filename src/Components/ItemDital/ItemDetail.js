@@ -3,6 +3,7 @@ import { CarritoContexto } from "../../Context/CartContext"
 import { Link } from "react-router-dom"
 import ItemCount from "../itemCount/ItemCount"
 import './itemDetail.css'
+//Item detail es un componente que recibe un objeto y lo muestra por pantalla
 const ItemDetail = ({producto})=>
 {
     const [cantidad, setCantidad] = useState(0);

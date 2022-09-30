@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom"
 import {bd} from '../../fireBaseConfiguraciones'
 import { getDoc, doc, collection } from 'firebase/firestore'
 import Carga from "../Carga/Carga";
-
 const ItemDetailContainer = ()=>
 {
    const [cargando, setCargando] = useState(true)

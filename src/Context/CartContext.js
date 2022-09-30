@@ -1,6 +1,8 @@
 import React ,{ createContext,useState} from 'react';
 import { useEffect } from 'react';
 
+//cartContext es un componente en el cual creo todas mis funciones para cargar o modificar
+// el carrito y poder pasarle a cualquier parte de mi pagina lo que requiera del carrito
 export const CarritoContexto = createContext();
 
 const CartProvider = ({children})=>{

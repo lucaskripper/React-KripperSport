@@ -5,7 +5,6 @@ import FormularioCompra from "../Formulario/FormularioCompra";
 import Cart from "../Cart/Cart";
 import {Routes, Route} from "react-router-dom";
 
-
 const Main = ()=>
 {
     return (
