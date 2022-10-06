@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# KripperSport
+![](https://res.cloudinary.com/dvwqrbanv/image/upload/v1665089006/Logo_zaequs.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Indice**
 
-## Available Scripts
+## Descripcion del proyecto
+La idea de la creación del e-commerce es facilitar al usuario el poder ver todos los productos del negocio y elegir mas rapido y mejor aquellos que cumplan con sus necesidades. Tambien ayudar a la tienda a tener una mayor exposicion y por lo tanto un mayor crecimiento que con los medios de venta tradicionales.
+## Estado del proyecto
+La aplicacion todavia se encuentra en produccion. Para que se encuentre finalizada, faltaría termina el responsive de toda la pagina, agregar funcionalidades de cobro, poder seleccionar diferentes talles, y crear el login de cada usuario. Fecha estimada de finalizacion, 25/10/2022.
+## Librerias Utilizadas
 
-In the project directory, you can run:
+- react-router-dom
 
-### `npm start`
+Esta libreria se utiliza para manejar las rutas de mi aplicacion
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para instalarla en tu proyecto debes escribir en la terminal:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```npm i react-router-dom```
 
-### `npm test`
+- firebase
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Esta libreria se utiliza para conectar una la base de datos de firebase y asi poder obtener los productos, como tambien llevar un control en la venta de y los usuarios que utilizan la aplicacion.
 
-### `npm run build`
+Para instalarla en tu proyecto debes escribir en la terminal:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```npm install firebase```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Google Fonts
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Esta libreria se utlizo para obtener los iconos del carrito como del menu responsive
 
-### `npm run eject`
+Para instalarla en tu proyecto debes escribir en el head del index:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />```
+- reactstrap
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Esta libreria se utilizo para traer los spinner de carga de toda la aplicacion.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Para instalarla en tu proyecto debes escribir en la terminal:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```npm install reactstrap react react-dom```
+- bootstrap
 
-## Learn More
+Esta libreria es un requisito para utilizar reactstrap, ya que le da el estilo.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para instalarla en tu proyecto debes escribir en la terminal:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```npm install --save bootstrap```
 
-### Code Splitting
+## Extras sobre el proyecto
+Este e-commerse es el primero que realizo. En caso de querer ver como funciona en el servidor poder hacerlo desde el siguiente `<link>` :
+<https://krippersport.vercel.app/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

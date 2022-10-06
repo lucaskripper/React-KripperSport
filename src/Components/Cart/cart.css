@@ -20,26 +20,19 @@
 .categoriaDetalleCarritoProducto
 {
     display: grid;
-    grid-template-columns: 35% 20% 25% 20%;
+    grid-template-columns: 40% 20% 35% 5%;
     justify-content: center;
     margin: 3%;
 }
-@media (max-width: 1240px) 
+h1
 {
-    .categoriaDetalleCarritoProducto
-    {
-        grid-template-columns: 30% 20% 25% 25%;
-    }
-    .categoriaDetalleCarritoProducto .imagenCartDetail
-    {
-        display: none;
-    }    
+    margin-top: 2%;
 }
 @media (max-width: 1000px) 
 {
     .categoriaDetalleCarritoProducto
     {
-        font-size: small;
+        grid-template-columns: 35% 20% 30% 10%
     }
 }
  

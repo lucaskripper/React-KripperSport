@@ -1,7 +1,13 @@
 .Contenedor
 {
   display: grid;
-  grid-template-columns: 20% 30% 50%;
+  grid-template-columns: 50% 50%;
+  margin-top: 5%;
+}
+.contenedorImagenes
+{
+  display: grid;
+  grid-template-columns: 40% 60%;
 }
 .imagenGrande img
 {
@@ -51,4 +57,22 @@
     cursor: pointer;
     color: rgba(247, 104, 2, 1) ;
     background-color: #ffffff;
+}
+@media (max-width: 1000px) {
+  .Contenedor .contenedorImagenes
+  {
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80%;
+  }
+  .imagenPequeña
+  {
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+  }
+  .imagenPequeña img
+  {
+    width: 100%;
+    margin: 2%;
+    height: 100%;
+  }
 }

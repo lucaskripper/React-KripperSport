@@ -14,14 +14,16 @@ const ItemDetail = ({producto})=>
     }
     return(
         <div className="Contenedor" key={producto.id}>
-            <div className="imagenPequeña">
-                <img src={producto.imagen} alt={producto.nombre} />
-                <img src={producto.imagen} alt={producto.nombre} />
-                <img src={producto.imagen} alt={producto.nombre} />
-                <img src={producto.imagen} alt={producto.nombre} />
-            </div>
-            <div className="imagenGrande">
-                <img src={producto.imagen} alt={producto.nombre} />
+            <div className="contenedorImagenes">
+                <div className="imagenPequeña">
+                    <img src={producto.imagen} alt={producto.nombre} />
+                    <img src={producto.imagen} alt={producto.nombre} />
+                    <img src={producto.imagen} alt={producto.nombre} />
+                    <img src={producto.imagen} alt={producto.nombre} />
+                </div>
+                <div className="imagenGrande">
+                    <img src={producto.imagen} alt={producto.nombre} />
+                </div>
             </div>
             <div className="infoDetalle">
                 <h2>{producto.nombre}</h2>

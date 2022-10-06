@@ -63,7 +63,7 @@ const FormularioCompra=()=>
     }
     return(
         <>
-            <h2>Finaliza tu compra</h2>
+            <h1>Finaliza tu compra</h1>
             <div className='detalleCompra'>        
                 <h3>Detalle</h3>
                 <p>Cantidad de productos: {unidades}</p>

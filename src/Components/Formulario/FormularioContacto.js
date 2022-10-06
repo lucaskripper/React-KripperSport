@@ -57,7 +57,7 @@ const FormularioContacto = ()=>
     }
     return (
         <div className="formulario">
-            <h2>Contacto</h2>
+            <h1>Contacto</h1>
             <form action="" onSubmit={handelSumbit}>
                 <h3>InformacionPersonal</h3>
                 <label htmlFor="nombreYApellido">Nombre y Apellido</label>
