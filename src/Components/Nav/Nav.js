@@ -30,7 +30,7 @@ const Nav = ()=>
     },[])
     return (
         <nav>
-            <section> {/** Esta seccion es para poner en un lugar el logo que hace de boton de inicio */}
+            <section>
                 <Link to ="/"><img src="https://res.cloudinary.com/dvwqrbanv/image/upload/v1662583861/Logo-PhotoRoom_wfeeod.png" alt="KripperSport" /></Link>
             </section>
             <ul>

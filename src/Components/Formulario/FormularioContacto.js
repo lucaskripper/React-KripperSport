@@ -3,11 +3,11 @@ import { useState } from 'react'
 import {addDoc, collection, serverTimestamp} from 'firebase/firestore'
 import {bd} from '../../fireBaseConfiguraciones'
 import { Link } from "react-router-dom";
-import Carga from '../Carga/Carga';
+import Load from "../Load/Load"
 import { Alert } from 'reactstrap';
 const FormularioContacto = ()=>
 {
-    const [cargando, setCargando] = useState(false)
+    const [Loading, setLoading] = useState(false)
     const [idContacto, setIdContacto] = useState('');
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
@@ -18,7 +18,7 @@ const FormularioContacto = ()=>
     const handelSumbit= (event) => 
     {
         event.preventDefault()
-        setCargando(true)
+        setLoading(true)
         const consulta =
         {
             cliente:{nombre,apellido,mail,telefono},
@@ -28,7 +28,7 @@ const FormularioContacto = ()=>
         const collecionConsultas = collection(bd, 'consultas')
         addDoc(collecionConsultas, consulta)
         .then((res)=>handelId(res.id))
-        .finally(()=>setCargando(false))
+        .finally(()=>setLoading(false))
     };
     const handelId=(id)=>
     {
@@ -40,9 +40,9 @@ const FormularioContacto = ()=>
     const handelChangeMailRepetido = (event) => setMailRepetido(event.target.value);
     const handelChangeTelefono = (event) => setTelefono(event.target.value);
     const handelChangeComentario = (event)=> setComentario(event.target.value);
-    if(cargando)
+    if(Loading)
     {
-        return <Carga/>
+        return <Load/>
     }
     if(idContacto)
     {

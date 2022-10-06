@@ -1,16 +1,16 @@
 import React,{useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
-import Carga from "../Carga/Carga";
+import Load from "../Load/Load";
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { bd } from '../../fireBaseConfiguraciones';
 const ItemListContainer = ()=>
 {
-    const [cargando, setCargando] = useState(true)
+    const [Loading, setLoading] = useState(true)
     const [item, setItem] = useState([]);
     const {categoryId} = useParams();
     useEffect(() => {
-        setCargando(true);
+        setLoading(true);
         const itemCollection = collection(bd, 'productos');
         const referencia = categoryId
             ? query(itemCollection, where('categoria', '==', categoryId))
@@ -31,10 +31,10 @@ const ItemListContainer = ()=>
             })
             .finally(()=>
             {
-                setCargando(false);
+                setLoading(false);
             })
     }, [categoryId]);
-    return cargando ?  <Carga/> :  <ItemList listaProductos={item}/>
+    return Loading ?  <Load/> :  <ItemList listaProductos={item}/>
     
     
 }
