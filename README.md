@@ -58,7 +58,7 @@ Esta es mi primer aplicación. En caso de querer ver como funciona en el servido
 <https://krippersport.vercel.app/>
 
 A continuacion dejo un breve recorrido de la aplicacion. Desde el ingreso hasta finalizar la compra:
-
+[![Alt text](https://img.youtube.com/vi/HtDcUUHZwR8/0.jpg)](https://www.youtube.com/watch?v=HtDcUUHZwR8)
 
 
 
