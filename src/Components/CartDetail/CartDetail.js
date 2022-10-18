@@ -6,7 +6,7 @@ const CartDetail=({producto})=>
     const {removeItem,fewerProducts,moreProducts}=useContext(CarritoContexto)
     const restar=()=>
     {
-        producto.cantidad > 0 && fewerProducts(producto,producto.cantidad-1)
+        producto.cantidad > 1 && fewerProducts(producto,producto.cantidad-1)
     }
     const sumar=()=>
     {
