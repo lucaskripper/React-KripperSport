@@ -30,7 +30,7 @@ nav ul li .menu
     color: black;
     text-decoration: none;
     font-size: 14px;
-    padding-left: 15px;
+    padding-left: 0.5rem;
     text-transform: uppercase;   
 }
 nav ul li .menu:hover
@@ -49,7 +49,7 @@ nav ul li .active
 {
     display: none;
 }
-@media (max-width: 700px) 
+@media (max-width: 616px) 
 {
     .hamburguesa
     {
@@ -58,8 +58,37 @@ nav ul li .active
         color: rgba(247, 104, 2, 1);
         background-color: white;
     }
-    nav ul li
+    .hamburguesa .iconoHamburgesa
+    {
+        font-size: 3rem;
+    }
+    nav ul
     {
         display: none;
+    }
+    .show
+    {
+        display: grid;
+        grid-template-columns: 25% 65% 10%;
+    }
+    .show ul 
+    {
+        display: flex;
+        justify-content: left;
+    }
+    .show section img
+    {
+        width: 100%;
     }    
+}
+@media (max-width: 510px) 
+{
+    .show
+    {
+        grid-template-columns: 50% 35% 10%;
+    }
+    .show ul
+    {
+        flex-direction: column;
+    }
 }

@@ -9,6 +9,7 @@ import { bd } from "../../fireBaseConfiguraciones";
 const Nav = ()=>
 {
     const [categoria, setCategoria] = useState([])
+    const [mostrar, setMostrar] = useState("");
     const {unidades}=useContext(CarritoContexto)
     useEffect(()=>
     {
@@ -29,7 +30,7 @@ const Nav = ()=>
 
     },[])
     return (
-        <nav>
+        <nav className={mostrar}>
             <section>
                 <Link to ="/"><img src="https://res.cloudinary.com/dvwqrbanv/image/upload/v1662583861/Logo-PhotoRoom_wfeeod.png" alt="KripperSport" /></Link>
             </section>
@@ -49,7 +50,7 @@ const Nav = ()=>
                     {unidades !== 0 && <p className="unidades">{unidades}</p>}
                 </li>
             </ul>
-            <button className="hamburguesa"><CardWidget Icon={<span class="material-symbols-outlined">menu</span>}/></button>
+            <button className="hamburguesa " onClick={()=> mostrar === "" ? setMostrar("show") : setMostrar("")}><CardWidget Icon={<span class="material-symbols-outlined iconoHamburgesa">menu</span>}/></button>
         </nav>
         );
 }
